@@ -26,5 +26,6 @@ string index abc b
 string repeat abc 3
 string to-lower ABc
 string to-upper Abc
+string match 121 ^[0-9]+$ && echo yes || echo no
 
 

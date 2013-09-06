@@ -5,6 +5,7 @@ import (
 	"encoding/json"
 	"fmt"
 	"os"
+	"regexp"
 	"strconv"
 	"strings"
 )
@@ -121,11 +122,24 @@ func main() {
 			os.Exit(1)
 		}
 		fmt.Println(strings.TrimSuffix(os.Args[2], os.Args[3]))
-        case "len":
+	case "len":
 		if len(os.Args) != 3 {
 			os.Exit(1)
 		}
 		fmt.Println(len(os.Args[2]))
+	case "match":
+		if len(os.Args) != 4 {
+			os.Exit(1)
+		}
+		r, err := regexp.Compile(os.Args[3])
+		if err != nil {
+			os.Exit(1)
+		}
+		if r.MatchString(os.Args[2]) {
+			os.Exit(0)
+		} else {
+			os.Exit(1)
+		}
 	case "split":
 		switch len(os.Args) {
 		case 4:
