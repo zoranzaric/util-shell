@@ -6,7 +6,7 @@ To prove this, see [String contains in bash](http://stackoverflow.com/questions/
 
 This is the top answer there:
 
-```
+```f
 	string='My string';
 
 	if [[ "$string" == *My* ]]
@@ -45,7 +45,7 @@ util-shell contains 4 basic binary that solves the more difficult part of shell.
 	math pi
 ```
 
-####`array`: bash syntax for array is very ugly. If you read it, you probably will for get about it tomorrow.
+####`array`: bash syntax for array is very ugly. If you read it, you probably will forget about it tomorrow.
 
 ```
 	arr=$(array new 1 2 3 4)
